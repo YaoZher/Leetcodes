@@ -10,7 +10,7 @@ package HOT.Greedy;
 class Solution {
     /**
      * 贪心：确定卖出日后，应选择此前价格最低的一天买入。
-     * 一次遍历维护历史最低价和最大利润。
+     * 一次遍历维护历史最低价和最大利s润。
      * 时间复杂度为 O(n)，额外空间复杂度为 O(1)。
      */
     public int maxProfit(int[] prices) {
@@ -18,6 +18,7 @@ class Solution {
         int maxProfit = 0;
 
         for (int day = 1; day < prices.length; day++) {
+            
             // 此时 minPrice 只来自今天之前，保证买入日早于卖出日。
             maxProfit = Math.max(maxProfit, prices[day] - minPrice);
 
